@@ -31,3 +31,11 @@ npm start avatars current
 ```
 
 Displays information about your currently equipped avatar.
+
+#### Delete avatars interactively
+
+```bash
+npm start avatars delete
+```
+
+Cycles through all your avatars. Press "D" to delete the current avatar, or press Enter to skip.

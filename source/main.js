@@ -46,6 +46,82 @@ if (command === "avatars") {
       thumbnailImageUrl: avatar.thumbnailImageUrl,
       version: avatar.version,
     });
+  } else if (commandArgs[0] === "delete") {
+    // Interactive avatar deletion mode
+    console.log("Getting all avatars...");
+    let allAvatars = [];
+    let offset = 0;
+    const n = 100; // Fetch 100 avatars per request
+
+    // Paginate through all avatars
+    while (true) {
+      const { data: avatars } = await vrchat.searchAvatars({
+        query: {
+          user: "me",
+          releaseStatus: "all", // Include both public and private avatars
+          n,
+          offset,
+        },
+        throwOnError: true,
+      });
+
+      // Stop if no more results
+      if (avatars.length === 0) break;
+
+      allAvatars = allAvatars.concat(avatars);
+
+      // Stop if we got fewer results than requested (last page)
+      if (avatars.length < n) break;
+
+      offset += n;
+    }
+
+    console.log(`Found ${allAvatars.length} avatars.`);
+    console.log('Press "D" to delete, or Enter to skip.\n');
+
+    // Import readline for interactive prompts
+    const readline = (await import("node:readline")).default;
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+    });
+
+    const question = (query) =>
+      new Promise((resolve) => rl.question(query, resolve));
+
+    let deletedCount = 0;
+
+    // Cycle through each avatar
+    for (let i = 0; i < allAvatars.length; i++) {
+      const avatar = allAvatars[i];
+      console.log(`\n[${i + 1}/${allAvatars.length}]`);
+      console.log(`ID: ${avatar.id}`);
+      console.log(`Name: ${avatar.name}`);
+      console.log(`Author: ${avatar.authorName}`);
+      console.log(`Version: ${avatar.version}`);
+      console.log(`Release Status: ${avatar.releaseStatus}`);
+
+      const answer = await question("\nAction (D to delete, Enter to skip): ");
+
+      if (answer.trim().toUpperCase() === "D") {
+        try {
+          console.log("Deleting avatar...");
+          await vrchat.deleteAvatar({
+            path: { avatarId: avatar.id },
+            throwOnError: true,
+          });
+          console.log("✓ Avatar deleted successfully");
+          deletedCount++;
+        } catch (error) {
+          console.error("✗ Failed to delete avatar:", error.message);
+        }
+      } else {
+        console.log("Skipped");
+      }
+    }
+
+    rl.close();
+    console.log(`\nDeletion complete. Deleted ${deletedCount} avatar(s).`);
   } else {
     // List all avatars with pagination
     console.log("Getting all avatars...");
@@ -60,7 +136,7 @@ if (command === "avatars") {
           user: "me",
           releaseStatus: "all", // Include both public and private avatars
           n,
-          offset
+          offset,
         },
         throwOnError: true,
       });
