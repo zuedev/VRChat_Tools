@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "keyv-file": "^5.2.0",
+    "vrchat": "^2.20.4"
+  },
+  "scripts": {
+    "start": "node source/main.js"
+  },
+  "type": "module"
+}
