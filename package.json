@@ -1,6 +1,6 @@
 {
   "name": "vrchat-tools",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "CLI tool for managing VRChat avatars via the VRChat API",
   "main": "source/main.js",
   "type": "module",
