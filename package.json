@@ -1,5 +1,5 @@
 {
-  "name": "vrchat-tools",
+  "name": "@zuedev/vrchat-tools",
   "version": "0.0.1",
   "description": "CLI tool for managing VRChat avatars via the VRChat API",
   "main": "source/main.js",
