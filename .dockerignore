@@ -1,0 +1,46 @@
+# Git files
+.git
+.gitignore
+.github
+
+# Node modules (will be installed in container)
+node_modules
+
+# Data files
+data.json
+
+# Documentation
+README.md
+LICENSE
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build files
+dist
+build
+
+# Test files
+test
+tests
+*.test.js
+*.spec.js
+
+# CI/CD files
+.travis.yml
+.circleci
+
+# npm files
+.npmignore
+.npmrc

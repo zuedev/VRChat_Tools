@@ -4,6 +4,43 @@ My set of VRChat-specific tools. Mostly uses the API.
 
 ## Installation
 
+### Docker (Recommended for Isolated Usage)
+
+Pull the latest image from GitHub Container Registry:
+
+```bash
+docker pull ghcr.io/zuedev/vrchat_tools:latest
+```
+
+Run with a volume mount to persist authentication data:
+
+```bash
+docker run -it --rm \
+  -v vrchat-data:/data \
+  ghcr.io/zuedev/vrchat_tools:latest avatars
+```
+
+Or using a local directory:
+
+```bash
+docker run -it --rm \
+  -v $(pwd)/data:/data \
+  ghcr.io/zuedev/vrchat_tools:latest avatars
+```
+
+**Docker Usage Examples:**
+
+```bash
+# List all avatars
+docker run -it --rm -v vrchat-data:/data ghcr.io/zuedev/vrchat_tools:latest avatars
+
+# Get current avatar
+docker run -it --rm -v vrchat-data:/data ghcr.io/zuedev/vrchat_tools:latest avatars current
+
+# Delete avatars interactively
+docker run -it --rm -v vrchat-data:/data ghcr.io/zuedev/vrchat_tools:latest avatars delete
+```
+
 ### Global Installation (Recommended)
 
 Install globally to use the `vrchat-tools` command anywhere:

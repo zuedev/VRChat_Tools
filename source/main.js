@@ -22,7 +22,7 @@ const vrchat = new VRChat({
     credentials: async () => await authenticate(),
   },
   keyv: new KeyvFile({
-    filename: "./data.json", // Store auth tokens and cookies locally
+    filename: process.env.DATA_FILE || "./data.json", // Store auth tokens and cookies locally
   }),
 });
 
