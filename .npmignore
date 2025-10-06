@@ -1,0 +1,19 @@
+# Development files
+.git
+.github
+node_modules
+*.log
+npm-debug.log*
+
+# Data and config
+data.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
