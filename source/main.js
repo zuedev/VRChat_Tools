@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { VRChat } from "vrchat";
 import { KeyvFile } from "keyv-file";
 import authenticate from "./authenticate.js";
