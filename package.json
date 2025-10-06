@@ -5,7 +5,8 @@
   "main": "source/main.js",
   "type": "module",
   "bin": {
-    "vrchat-tools": "./source/main.js"
+    "vrchat-tools": "./source/main.js",
+    "vrchat-tools.cmd": "./source/main.cmd"
   },
   "scripts": {
     "start": "node source/main.js"
