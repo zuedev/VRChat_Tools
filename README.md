@@ -1,5 +1,7 @@
 # vrctools
 
+[![Tests](https://github.com/zuedev/vrctools/actions/workflows/test.yml/badge.svg)](https://github.com/zuedev/vrctools/actions/workflows/test.yml)
+
 🎭 CLI tool for managing VRChat via the API.
 
 ## Installation
@@ -60,6 +62,14 @@ npm install -g @zuedev/vrctools --registry=https://npm.pkg.github.com
 ```bash
 npm install
 ```
+
+### Running Tests
+
+```bash
+npm test
+```
+
+For more information about testing, see [TESTING.md](TESTING.md).
 
 ## Usage
 
