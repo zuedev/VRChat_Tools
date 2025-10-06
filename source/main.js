@@ -14,9 +14,9 @@ const commandArgs = args.slice(1);
 // Initialize VRChat API client with authentication and persistent storage
 const vrchat = new VRChat({
   application: {
-    name: "zuedev/VRChat_Tools",
-    version: "0.0.0",
-    contact: "https://github.com/zuedev/VRChat_Tools",
+    name: "zuedev/vrctools",
+    version: "0.0.1",
+    contact: "https://github.com/zuedev/vrctools",
   },
   authentication: {
     credentials: async () => await authenticate(),

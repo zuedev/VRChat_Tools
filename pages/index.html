@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="CLI tool for managing VRChat avatars via the VRChat API - List, view, and bulk delete avatars with interactive controls."
+      content="CLI tool for managing VRChat via the VRChat API - List, view, and bulk delete avatars with interactive controls."
     />
-    <title>VRChat Tools - Avatar Management CLI</title>
+    <title>vrctools - VRChat Management CLI</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body
@@ -20,10 +20,10 @@
         <h1
           class="text-4xl md:text-5xl font-bold mb-2 flex items-center justify-center gap-2"
         >
-          🎭 VRChat Tools
+          🎭 vrctools
         </h1>
         <p class="text-lg md:text-xl opacity-95">
-          CLI tool for managing VRChat avatars via the VRChat API
+          CLI tool for managing VRChat via the VRChat API
         </p>
       </header>
 
@@ -118,12 +118,12 @@
           <pre
             class="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-x-auto my-4"
           ><code># Pull the latest image
-docker pull ghcr.io/zuedev/vrchat_tools:latest
+docker pull ghcr.io/zuedev/vrctools:latest
 
 # Run with volume mount
 docker run -it --rm \
   -v vrchat-data:/data \
-  ghcr.io/zuedev/vrchat_tools:latest avatars</code></pre>
+  ghcr.io/zuedev/vrctools:latest avatars</code></pre>
 
           <h3 class="text-2xl font-semibold text-purple-700 mt-6 mb-3">
             Global Installation (Recommended)
@@ -131,10 +131,10 @@ docker run -it --rm \
           <pre
             class="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-x-auto my-4"
           ><code># Install globally via npm
-npm install -g vrchat-tools
+npm install -g vrctools
 
 # Or from GitHub Packages
-npm install -g @zuedev/vrchat-tools --registry=https://npm.pkg.github.com</code></pre>
+npm install -g @zuedev/vrctools --registry=https://npm.pkg.github.com</code></pre>
 
           <h3 class="text-2xl font-semibold text-purple-700 mt-6 mb-3">
             Local Development
@@ -152,21 +152,21 @@ npm install -g @zuedev/vrchat-tools --registry=https://npm.pkg.github.com</code>
           </h3>
           <pre
             class="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-x-auto my-4"
-          ><code>vrchat-tools avatars</code></pre>
+          ><code>vrctools avatars</code></pre>
 
           <h3 class="text-2xl font-semibold text-purple-700 mt-6 mb-3">
             Get Current Avatar
           </h3>
           <pre
             class="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-x-auto my-4"
-          ><code>vrchat-tools avatars current</code></pre>
+          ><code>vrctools avatars current</code></pre>
 
           <h3 class="text-2xl font-semibold text-purple-700 mt-6 mb-3">
             Delete Avatars Interactively
           </h3>
           <pre
             class="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-x-auto my-4"
-          ><code>vrchat-tools avatars delete</code></pre>
+          ><code>vrctools avatars delete</code></pre>
           <p class="text-gray-700 mt-3">
             Press
             <code
@@ -186,17 +186,17 @@ npm install -g @zuedev/vrchat-tools --registry=https://npm.pkg.github.com</code>
           <h2 class="text-3xl font-bold text-indigo-600 mb-6">Quick Start</h2>
           <div class="flex flex-wrap gap-4">
             <a
-              href="https://github.com/zuedev/VRChat_Tools"
+              href="https://github.com/zuedev/vrctools"
               class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
               >View on GitHub</a
             >
             <a
-              href="https://github.com/zuedev/VRChat_Tools#readme"
+              href="https://github.com/zuedev/vrctools#readme"
               class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
               >Read Documentation</a
             >
             <a
-              href="https://github.com/zuedev/VRChat_Tools/issues"
+              href="https://github.com/zuedev/vrctools/issues"
               class="inline-block border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 font-semibold px-6 py-3 rounded-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
               >Report Issues</a
             >
@@ -228,7 +228,7 @@ npm install -g @zuedev/vrchat-tools --registry=https://npm.pkg.github.com</code>
         <p class="mb-4">
           Licensed under
           <a
-            href="https://github.com/zuedev/VRChat_Tools/blob/main/LICENSE"
+            href="https://github.com/zuedev/vrctools/blob/main/LICENSE"
             target="_blank"
             class="text-indigo-600 hover:text-indigo-800 hover:underline font-medium"
             >The Unlicense</a
