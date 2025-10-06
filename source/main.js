@@ -26,9 +26,40 @@ const vrchat = new VRChat({
 });
 
 // Authenticate and get current user info
-const { data: user } = await vrchat.getCurrentUser({ throwOnError: true });
-state.currentUser = user;
-console.log(`Logged in as ${state.currentUser.displayName}.`);
+try {
+  const { data: user } = await vrchat.getCurrentUser({ throwOnError: true });
+  state.currentUser = user;
+  console.log(`Logged in as ${state.currentUser.displayName}.`);
+} catch (error) {
+  if (
+    error.message.includes("Username is required") ||
+    error.message.includes("Password is required")
+  ) {
+    console.error(`\n❌ ${error.message}`);
+  } else if (
+    error.statusCode === 401 ||
+    error.message.includes("Invalid credentials")
+  ) {
+    console.error("\n❌ Authentication failed: Invalid username or password");
+    console.error("Please check your credentials and try again.");
+  } else if (error.statusCode === 403) {
+    console.error(
+      "\n❌ Authentication failed: Two-factor authentication required"
+    );
+    console.error("Please provide a valid 2FA code.");
+  } else if (
+    error.message.includes("ENOTFOUND") ||
+    error.message.includes("network")
+  ) {
+    console.error(
+      "\n❌ Authentication failed: Unable to connect to VRChat servers"
+    );
+    console.error("Please check your internet connection and try again.");
+  } else {
+    console.error("\n❌ Authentication failed:", error.message);
+  }
+  process.exit(1);
+}
 
 // Handle avatar-related commands
 if (command === "avatars") {
